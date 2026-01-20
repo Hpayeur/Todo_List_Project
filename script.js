@@ -1,28 +1,12 @@
+
 let todoArray = [];
 const text = document.getElementById("text");
 const addTaskButton = document.getElementById("add-task-btn");
 const saveTaskButton = document.getElementById("save-todo-btn");
 const listBox = document.getElementById("listBox");
 const saveInd = document.getElementById("saveIndex");
-
-// Challenge: Try and using your addTaskButton with a "keydown" eventlistener
-// and create a way to use the enter key to submit a new list item.
-
 addTaskButton.addEventListener("click", (e) => {
-  e.preventDefault(); // This prevents the page from reloading.
-  // start by setting a variable named todo to equal localstorage.getitem("todo")
-  // Add code below this line
-
-  // check if todo is null, if it is set todoArray = []
-  // else set todoArray to JSON.parse() your variable passed into the parse method.
-
-  // check if text.value is empty, alert that the input is empty and return
-
-  // now that you've parsed the value, push the text.value to the todoArray.
-  // set the text.value to an empty string.
-  // get the localstorage method and use the setItem and pass in todo
-  // and pass in JSON.stringify(todoArray).
-  // lastly call display todo method
+  e.preventDefault(); \
 });
 
 // Add code below this comment to do the following:

@@ -1,3 +1,14 @@
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  height: 100%;
+  width: 100%;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: #b2f5ea;
+}
+
 body {
-  background-color: rgb(52, 52, 52);
+  background-color: #423e46;
 }
