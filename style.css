@@ -1,5 +1,5 @@
 body {
-  background-color: #423e46;
+  background-color: #54495f;
 }
 .list-container {
   display: flex;
@@ -9,7 +9,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: ui-sans-serif, system-ui, sans-serif;
-  background: #b2f5ea;
+  background: #4d3c5e;
 }
 
 .box-container {
@@ -20,28 +20,28 @@ body {
   box-shadow:
     0 1px 3px 0 rgba(0, 0, 0, 0.1),
     0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  background: #111827;
+  background: #342741;
 }
 
 .start-box {
   margin-bottom: 1.5rem;
 }
 
-.todo-list h1 {
+.todo-list {
   margin-bottom: 0.5rem;
   font-size: 1.875rem;
   font-weight: 500;
-  color: #4f46e5;
+  color: #8567a1;
 }
 
-.text-box {
+.text {
   display: flex;
   appearance: none;
   -webkit-apperence: none;
   border-width: 1px;
   border-style: solid;
   border-color: #e2e8f0;
-  color: #606f7b;
+  color: #4d3c5e;
   border-radius: 0.25rem;
   margin-top: 1rem;
   margin-right: 1rem;
@@ -54,7 +54,7 @@ body {
     0 1px 3px 0 rgba(0, 0, 0, 0.1),
     0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
-.add-list {
+.AddList {
   text-align: center;
   color: #fff;
   margin-top: 0.25rem;
@@ -63,13 +63,13 @@ body {
   padding: 0.5rem 1rem;
   border-width: 1px;
   border-style: solid;
-  border-color: #4f46e5;
+  border-color: #664685;
   transition-duration: 0.3s;
   transition-property: color, background-color;
-  background-color: #4f46e5;
+  background-color: #8567a1;
   border-radius: 0.25rem;
 }
-.edit-list {
+.EditList {
   text-align: center;
   color: #fff;
   margin-top: 0.25rem;
@@ -78,10 +78,10 @@ body {
   padding: 0.5rem 1rem;
   border-width: 1px;
   border-style: solid;
-  border-color: #4f46e5;
+  border-color: #664685;
   transition-duration: 0.3s;
   transition-property: color, background-color;
-  background-color: #4f46e5;
+  background-color: #8567a1;
   border-radius: 0.25rem;
 }
 
