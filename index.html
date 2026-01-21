@@ -17,17 +17,17 @@
         <div class="start-box">
           <h1 class="todo-list">To-Do List App</h1>
           <div class="textbox">
-            <form id="ItemsForm">
-              <input
-                class="text"
-                type="text"
-                id="itemsInput"
-                placeholder="Add to my To-Do list"
-              />
-              <button type="Submit" id="submitButton">Submit list</button>
-              <button class="AddList" id="add-task-btn">Add</button>
-              <button class="EditList" id="save-todo-btn">Edit Todo</button>
-            </form>
+            <input
+              class="text"
+              type="text"
+              id="itemInput"
+              placeholder="Add To my To-Do List"
+            />
+            <input type="hidden" id="saveIndex" />
+            <button class="AddList" id="add-task-btn" onclick="addItem()">
+              Add To List
+            </button>
+            <button class="EditList" id="save-todo-btn">Edit My List</button>
             <ul id="itemsList"></ul>
           </div>
         </div>

@@ -1,48 +1,47 @@
 let todoArray = [];
 const text = document.getElementById("text");
 const addTaskButton = document.getElementById("add-task-btn");
-const taskInpput = document.getElementById("taskInput");
 const saveTaskButton = document.getElementById("save-todo-btn");
-const listBox = document.getElementById("listBox");
-const saveInd = document.getElementById("saveIndex");
+const itemInput = document.getElementById("itemInput");
+const itemList = document.getElementById("itemList");
 
-// Challenge: Try and using your addTaskButton with a "keydown" eventlistener
-// and create a way to use the enter key to submit a new list item.
-taskInpput.addEventListener("keydown", function (event) {
-  if ((event, key === "enter" || event.code === "Enter")) {
-    event.preventDefault();
-    addTaskButton();
-  }
-});
-
-addTaskButton.addEventListener("click", function () {
-  addTaskButton();
-});
-
-function addTask() {
-  const taskText = taskInpput.ariaValueMax.trim();
-  if (taskText !== "") {
-    console.log("Adding task:", taskText);
-    taskInput.value = "";
-  } else {
-    console.log("Task Input is Currently Empty");
+function AddItem() {
+  3;
+  const newItemText = itemInput.value.trim();
+  if (newItemText === "") {
+    const li = document.createElement("li");
+    li.textContent = newItemText;
+    itemList.appendChild(li);
+    itemInput.value = "";
   }
 }
 
-// This prevents the page from reloading.
-// start by setting a variable named todo to equal localstorage.getitem("todo")
-// Add code below this line
+itemInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    AddItem();
+  }
+});
 
-// check if todo is null, if it is set todoArray = []
-// else set todoArray to JSON.parse() your variable passed into the parse method.
+addTaskButton.addEventListener("click", () => {
+  let todo = localStorage.getItem("todo");
+  if (todo === null) {
+    todoArray = [];
+  } else {
+    todoArray = JSON.parse(todo);
+  }
+  if (text.value === "") {
+    alert("Input is empty");
+    return;
+  }
+});
 
-// check if text.value is empty, alert that the input is empty and return
+todoArray.push(text.value);
+text.value = "";
+localStorage.setItem("todo", JSON.stringify(todoArray));
+displayTodo();
 
-// now that you've parsed the value, push the text.value to the todoArray.
-// set the text.value to an empty string.
-// get the localstorage method and use the setItem and pass in todo
-// and pass in JSON.stringify(todoArray).
-// lastly call display todo method
+function displayTodos(todoList) {}
 
 // Add code below this comment to do the following:
 // 1. when the page loads, call displayTodo() method
@@ -94,4 +93,7 @@ function addTask() {
 // 2. switch the add and save displays to block and none respectively.
 // 3. set text value to empty
 // 4. and use the localstorage method setItem, pass in todo and stringify the array.
-// 5. display todo method called.
+// 5. display todo method called
+
+// const listBox = document.getElementById("listBox");
+// const saveInd = document.getElementById("saveIndex");
