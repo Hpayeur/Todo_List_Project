@@ -26,22 +26,22 @@ itemInput.addEventListener("keydown", function (event) {
 });
 
 addTaskButton.addEventListener("click", () => {
+  if (itemInput.value === "") {
+    alert("Input is empty");
+    return;
+  }
+  todoArray.push(itemInput.value);
+  itemInput.value = "";
+  localStorage.setItem("todo", JSON.stringify(todoArray));
+
   let todo = localStorage.getItem("todo");
   if (todo === null) {
     todoArray = [];
   } else {
     todoArray = JSON.parse(todo);
   }
-  if (text.value === "") {
-    alert("Input is empty");
-    return;
-  }
+  displayTodo();
 });
-
-todoArray.push(text.value);
-text.value = "";
-localStorage.setItem("todo", JSON.stringify(todoArray));
-displayTodo();
 
 function displayTodo() {
   let todo = localStorage.getItem("todo");
@@ -77,7 +77,7 @@ function edit(ind) {
   saveInd.value = ind;
   let todo = localStorage.getItem("todo");
   let todoArray = JSON.parse(todo);
-  text.value = todoArray[ind];
+  itemInput.value = todoArray[ind];
   document.getElementById("add-task-btn").style.display = "none";
   document.getElementById("save-todo-btn").style.display = "block";
 }
@@ -87,11 +87,14 @@ saveTaskButton.addEventListener("click", () => {
   let todoArray = JSON.parse(todos) || [];
   let id = parseInt(saveInd.value);
   if (id >= 0 && id < todoArray.length) {
-    todoArray[id].task = todoInput.value;
-    addDisplay.style.display = "block";
-    saveDisplay.style.display = "none";
-    todoInput.value = "";
+    todoArray[id] = itemInput.value;
+    addTaskButton.style.display = "block";
+    saveTaskButton.style.display = "none";
+    itemInput.value = "";
     localStorage.setItem("todo", JSON.stringify(todoArray));
     displayTodo();
   }
 });
+displayTodo();
+
+// save-todo-btn
